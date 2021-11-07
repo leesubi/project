@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-win8.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title> 백화난만, 百花爛漫</title>
+    <style>
+        body {max-width: 1200px; margin:0px auto;
+        }
+        header {display: block;
+            height: 100px;
+        }
+        ul {list-style: none;
+        }
+        a {text-decoration: none;
+        }
+        li {list-style: none;
+        }
+        section{display:flex;
+        }
+        article{flex: 3;
+        }
+        aside{flex: 1;
+        }
+        nav{flex: 1;
+        }
+        footer{display: block;
+            height: 100px;
+        }
+    </style>
+    <script>
+        function login(){
+           let id = document.getElementById("id").value;
+           let pw = document.getElementById("pw").value;
+           if (id==="admin"){
+               if(pw==="1234"){
+                   alert( id + "님이 로그인하였습니다");
+               } else { 
+                   alert("비밀번호를 확인하세요");
+               }
+           } else {
+               alert("회원가입을 하세요");
+           }
+       } 
+       function sign_up(){
+           alert("회원가입 페이지로 넘어갑니다.")
+       }
+       function Send(){
+           alert("성공적으로 접수 되었습니다. 감사합니다.")
+       }
+       function cooking(){
+           alert("현재 예약 신청 기간이 아닙니다.")
+       }
+        function w3_open(){
+            document.getElementById("mySidebar").style.width="30%";
+            document.getElementById("mySidebar").style.display="block";
+            document.getElementById("myOverlay").style.display = "block";
+        }   
+       function w3_close(){
+           document.getElementById("mySidebar").style.display="none";
+           document.getElementById("myOverlay").style.display = "none";
+        } 
+        function myAccFunc() {
+            var x = document.getElementById("demoAcc");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+                x.previousElementSibling.className += " w3-2021-buttercream";
+            } else { 
+                x.className = x.className.replace("w3-show", "");
+                x.previousElementSibling.className = 
+                x.previousElementSibling.className.replace("w3-2021-buttercream", "");
+            }
+        }
+    </script>
+</head>
+<body class="w3-container w3-2021-buttercream" onload="tablePrint();">
+    <div class="container">
+    <div class="w3-sidebar w3-bar-block	w3-animate-left w3-card" style="display:none;z-index:5" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large w3-2021-buttercream"> more &times; </button> 
+        <a href="./index.html" class="w3-bar-item w3-button"> home </a>
+        <div class="w3-button w3-bar-item" onclick="myAccFunc()">
+            items <i class="fa fa-caret-down"></i></div>
+        <div id="demoAcc" class="w3-hide w3-white w3-card-4">
+            <a href="./product.html" class="w3-bar-item w3-button">season items</a>
+            <a href="./product.html" class="w3-bar-item w3-button">items</a>
+        </div>
+
+        <a href="./index.html" class="w3-bar-item w3-button"> reference content </a>
+        <a href="./notice.html" class="w3-bar-item w3-button">notice</a>
+        <a href="./index.html" class="w3-bar-item w3-button">C&S</a>
+        </div>
+    </div>
+    <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+        <button class="w3-button w3-xxlarge w3-hover-none" onclick="w3_open()">&#9776;</button>
+        <header class="w3-container">
+            <h1>百花爛漫</h1>
+    </div>
+    </header>
+    <nav>
+        <div class="w3-container w3-bar w3-left w3-2021-desert-mist w3-opacity-min">
+            <a href="./index.html" class="w3-button w3-hover-sand">home</a>
+            <a href="./product.html" class="w3-button w3-hover-sand">season items</a>
+            <a href="./product.html" class="w3-button w3-hover-sand">items</a>
+            <a href="./index.html" class="w3-button w3-hover-sand">reference content</a>
+            <a href="./notice.html" class="w3-button w3-hover-sand">notice</a>
+            <a href="./index.html" class="w3-button w3-hover-sand">C&S</a>
+            <a href="#" class="w3-button w3-hover-sand w3-right">mypage</a>
+            <a href="#" class="w3-button w3-hover-sand w3-right">cart</a>
+        </div>
+    </nav>
+    <br><br>
+    <br>
+    <aside class="w3-container w3-2021-desert-mist w3-right w3-opacity-min">
+        <div id="login" class="w3-container w3-center">
+            <h4> LOGIN </h4>
+            ID : 
+            <input type="text" name="" id="id"><br>
+            PW:
+            <input type="password" name="" id="pw">
+            <br><br>
+            <button class="w3-center w3-third" onclick="sign_up();"> sign up </button>
+            <button class="w3-center w3-third" onclick="login();"> join </button>
+            <button class="w3-center w3-third" onclick="cancle();"> cancle </button>
+        </div>
+        <br><br>
+        <input type="text" class="w3-bar-item w3-input w3-small" placeholder="Search..">
+        <a href="#" class="w3-bar-item w3-button w3-right ">Go</a>
+        <br><br>
+        <div id = "contact" class="w3-container w3-left">
+            <h4> reservation </h4>
+                <p> 꽃꽂이 클래스
+                <button class="w3-small" onclick="document.location='./class.html'">예약</button></p>
+                <p> 전통차 체험
+                <button class="w3-small " onclick="document.location='./class2.html'">예약</button></p>
+                <p> 꽃차 및 쿠킹 체험
+                <button class="w3-small " onclick="cooking();">예약</button></p> 
+        </div>
+        <br>
+    </aside>
+    <section>
+    <article class="w3-left" style="text-align: left;">
+        <h2><b>notice</b></h2>
+        <br><br>
+        <p>
+            1. 배송안내<br> 
+            
+            - 배송 업체: CJ 대한통운 (1588-1255)<br> 
+            - 배송 지역: 대한민국 전지역<br> 
+            - 배송 비용: 조건부배송(4만원 이상 무료배송) / 도서산간 지역 별도 추가 금액 발생<br> 
+            - 배송 기간: 주말·공휴일 제외 2일~5일 (최대 14일) 
+        </p>
+        <br>
+        <p>
+            2-1. 유의 사항<br> 
+    
+            - 주문폭주 및 공급 사정으로 인하여 지연 및 품절이 발생될 수 있습니다. <br>  
+            - 기본 배송기간 이상 소요되는 상품이거나, 품절 상품은 개별 연락을 드립니다. 
+        </p>
+        <br>
+        <p>
+            2-2. 교환및 반품이 가능한 경우<br> 
+
+            - 상품에 하자가 있거나 오배송일 경우 동일한 제품으로 교환이 가능합니다. (반품하실 경우 단순 변심으로 간주되어 배송비 부과됩니다.)<br> 
+            - 구매 금액에 따른 사은품을 받으신 경우 상품 반품 처리 시 사은품 포함하여 반품하셔야 합니다. <br> 
+            - 개인의 불찰로 인한 하자 발생 시 교환/반품 처리되지 않습니다.
+        </p>  
+        <br>
+        <p> 
+            2-3. 동봉되어 있는 교환/ 반품 <br> 
+            - 수령한 날로부터 48시간 이내 반품 신청 해 주신 후<br> 
+                반품 주소 ㅣ부산광역시 연제구 **동 17번길 12-1 **빌딩 3층 <br> 
+                반드시 수령일로부터 7일 내로 회수되어야 교환 처리가 가능합니다.<br> 
+                
+            
+             
+            - 반품 배송비 미 입금시 환불금액에서 차감되어 환불됩니다. (2,500원/제주산간 5,500원)<br> 
+            - 왕복 배송비 5000원(제주산간11,000원)은 고객님이 부담하셔야하며, 계좌 입금만 가능합니다.<br> 
+            - 교환 시 왕복 배송비는 농협은행 3##-1###-8###-#3 백화난만으로 입금해 주셔야 합니다. (동봉 시 분실위험)<br>  
+        </p>
+        <br>
+        <p>
+            2-4. 교환 및 반품이 불가능한 경우<br> 
+
+            - 고객님의 부주의로 인하여 상품 손상의 경우<br> 
+            - 상품의 가치가 훼손된 경우 (꽃잎의 개수, 꽃의 변색 등)<br> 
+            - 세일상품 및 품절된 상품의 경우<br> 
+            - 포장되는 과정에서 발생하는 미세 하자<br> 
+        </p>
+        <br>
+        <p>
+            3. 환불 처리 안내<br> 
+
+            - 상품 도착 후 환불처리는 1일~3일 안에 처리됩니다.<br> 
+            - 무통장 실시간 이체의 경우 고객님의 은행 계좌를 알려주시면 이체 됩니다.<br> 
+            - 신용카드로 결제하신 경우는 신용카드 승인 취소를 요청한 날로 부터 7~15일 안에 취소됩니다.<br> 
+            - 실시간 계좌이체는 2~5일 이후 해당 은행에서 환불처리 됩니다.<br> 
+        </p>
+    </article>
+    </section>
+    <br><br><br>
+    <hr>
+    <footer class="w3-conatiner w3-center">
+    <div class="w3-row">
+        <div class="w3-col s3">
+            <h6> Contact </h6>
+            <ul style="font-size: 10px;">   
+                <li> 사업자번호: ****-**-***** </li><br>
+                <li> tell.  010-3728-****</li><br>
+                <li> e-mail: qtmkk5@naver.com<a href="mailto:qtmkk5@naver.com" title="E-mail"></a></li>
+            </ul>
+        </div>
+        <div class="w3-col s3 w3-conatiner w3-center">
+            <h6>SNS</h6>
+            <a href="#"><i class="fa fa-instagram" style="font-size: 15px;"></i></a>
+            <a href="#"><i class="fa fa-facebook" style="font-size: 15px;"></i></a>
+        </div>
+        <div class="w3-col s3 w3-conatiner w3-center" style="font-size: 10px;">
+            <h6> location </h6>
+            부산광역시 연제구 **동 17번길 12-1 **빌딩 3층 
+        </div>
+        <div class="w3-col s3 w3-conatiner w3-center" style="font-size: 10px;">
+            <h6>open-closed</h6>
+            월~금: 09:00 ~ 18:00 <br>
+            토: 09:00 ~ 13:00 <br>
+            일, 공휴일 휴무 
+        </div>
+    </div>
+    </footer>
+    </div>
+</body>
+</html>

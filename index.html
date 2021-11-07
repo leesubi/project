@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-win8.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title> 백화난만, 百花爛漫</title>
+    <style>
+        body {max-width: 1200px; margin:0px auto;
+        }
+        header {display: block;
+            height: 100px;
+        }
+        ul {list-style: none;
+        }
+        a {text-decoration: none;
+        }
+        li {list-style: none;
+        }
+        section{display:flex;
+        }
+        article{flex: 3;
+        }
+        aside{flex: 1;
+        }
+        nav{flex: 1;
+        }
+        footer{display: block;
+            height: 100px;
+        }
+    </style>
+    <script>
+        function login(){
+           let id = document.getElementById("id").value;
+           let pw = document.getElementById("pw").value;
+           if (id==="admin"){
+               if(pw==="1234"){
+                   alert( id + "님이 로그인하였습니다");
+               } else { 
+                   alert("비밀번호를 확인하세요");
+               }
+           } else {
+               alert("회원가입을 하세요");
+           }
+       } 
+       function sign_up(){
+           alert("회원가입 페이지로 넘어갑니다.")
+       }
+       function Send(){
+           alert("성공적으로 접수 되었습니다. 감사합니다.")
+       }
+       function cooking(){
+           alert("현재 예약 신청 기간이 아닙니다.")
+       }
+        function w3_open(){
+            document.getElementById("mySidebar").style.width="30%";
+            document.getElementById("mySidebar").style.display="block";
+            document.getElementById("myOverlay").style.display = "block";
+        }   
+       function w3_close(){
+           document.getElementById("mySidebar").style.display="none";
+           document.getElementById("myOverlay").style.display = "none";
+        } 
+        function myAccFunc() {
+            var x = document.getElementById("demoAcc");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+                x.previousElementSibling.className += " w3-2021-buttercream";
+            } else { 
+                x.className = x.className.replace("w3-show", "");
+                x.previousElementSibling.className = 
+                x.previousElementSibling.className.replace("w3-2021-buttercream", "");
+            }
+        }
+
+    </script>
+</head>
+<body class="w3-container w3-2021-buttercream" onload="tablePrint();">
+    <div class="container">
+    <div class="w3-sidebar w3-bar-block	w3-animate-left w3-card" style="display:none;z-index:5" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large w3-2021-buttercream"> more &times; </button> 
+        <a href="#home" class="w3-bar-item w3-button"> home </a>
+        <div class="w3-button w3-bar-item" onclick="myAccFunc()">
+            items <i class="fa fa-caret-down"></i></div>
+        <div id="demoAcc" class="w3-hide w3-white w3-card-4">
+            <a href="./product.html/" class="w3-bar-item w3-button">season items</a>
+            <a href="./product.html" class="w3-bar-item w3-button">items</a>
+        </div>
+        <a href="#reference contents" class="w3-bar-item w3-button"> reference contents </a>
+        <a href="./notice.html" class="w3-bar-item w3-button">notice</a>
+        <a href="#C&S" class="w3-bar-item w3-button">C&S</a>
+    </div>
+    <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+        <button class="w3-button w3-xxlarge w3-hover-none" onclick="w3_open()">&#9776;</button>
+        <header class="w3-container">
+            <h1>百花爛漫</h1>
+
+    </div>
+    </header>
+    <nav>
+        <div class="w3-container w3-bar w3-left w3-2021-desert-mist w3-opacity-min">
+            <a href="#home" class="w3-button w3-hover-sand">home</a>
+            <a href="./product.html" class="w3-button w3-hover-sand">season items</a>
+            <a href="./product.html" class="w3-button w3-hover-sand">items</a>
+            <a href="#reference contents" class="w3-button w3-hover-sand">reference contents</a>
+            <a href="./notice.html" class="w3-button w3-hover-sand">notice</a>
+            <a href="#C&S" class="w3-button w3-hover-sand">C&S</a>
+            <a href="#" class="w3-button w3-hover-sand w3-right">mypage</a>
+            <a href="#" class="w3-button w3-hover-sand w3-right">cart</a>
+
+        </div>
+    </nav>
+    <br><br>
+    <br>
+    <aside class="w3-container w3-2021-desert-mist w3-right w3-opacity-min">
+        <div id="login" class="w3-container w3-center">
+            <h4> LOGIN </h4>
+            ID : 
+            <input type="text" name="" id="id"><br>
+            PW:
+            <input type="password" name="" id="pw">
+            <br><br>
+            <button class="w3-center w3-third" onclick="sign_up();"> sign up </button>
+            <button class="w3-center w3-third" onclick="login();"> join </button>
+            <button class="w3-center w3-third" onclick="cancle();"> cancle </button>
+        </div>
+        <br><br>
+        <input type="text" class="w3-bar-item w3-input w3-small" placeholder="Search..">
+        <a href="#" class="w3-bar-item w3-button w3-right">Go</a>
+        <br><br>
+        <div id = "contact" class="w3-container w3-left">
+            <h4> reservation </h4>
+                <p> 꽃꽂이 클래스
+                <button class="w3-small" onclick="document.location='./class.html'">예약</button></p>
+                <p> 전통차 체험
+                <button class="w3-small" onclick="document.location='./class2.html'">예약</button></p>
+                <p> 꽃차 및 쿠킹 체험
+                <button class="w3-small" onclick="cooking();">예약</button></p> 
+        </div>
+        <br>
+    </aside>
+    <section class="w3-conatiner ">
+        <article id="home" class = "w3-container w3-center">
+        <div class="w3-content w3-section" style="width:600px">
+            <img class="mys" src="./images/f02.jpg" style="width:600px">
+            <img class="mys" src="./images/f03.jpg" style="width:600px">
+            <img class="mys" src="./images/f04.jpg" style="width:600px">
+            <img class="mys" src="./images/f05.jpg" style="width:600px">
+            <img class="mys" src="./images/f06.jpg" style="width:600px">
+          </div>
+        <script>
+            var myIndex = 0;
+            carousel();
+            
+            function carousel() {
+              var i;
+              var x = document.getElementsByClassName("mys");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              myIndex++;
+              if (myIndex > x.length) {myIndex = 1}    
+              x[myIndex-1].style.display = "block";  
+              setTimeout(carousel, 2000); // Change image every 2 seconds
+            }
+        </script>
+        <br>
+        <p><b> 百花爛漫; 온갖 꽃이 활짝 펴 아름답고 흐드러짐 </b><br>
+            백화난만을 찾아 주셔서 진심으로 감사합니다. <br>
+            꽃이 우리의 일상 어디든 피어 있듯이 <br>
+            오늘도, 내일도 고객님들의 일상에 항상 향긋한 꽃내음들이 가득하기를 바랍니다.
+        </p>
+        <br><br><br>
+        <br><br><br>
+        <div id= "reference contents" class="w3-conatiner">
+            <h3 class="w3-container"> <b>꽃(차)의 효능 </b></h3> <br>
+            <p>아카시아: 항암 효과, 피부 미용, 습진 </p><br>
+            <p>카모마일: 항암 효과, 노화 억제, 불면증 개선, 피부 개선</p> <br>
+            <p>히비스커스: 혈액순환, 혈압 안정 (과다 섭취 시 부작용 발생, 임산부 및 산모는 주의해 주세요)</p><br>
+            <p>달맞이꽃: 피부 미용, 항산화 효능 </p><br>
+            <p>국화(백화차): 항산화 효과, 호흡기 질환 및 해열작용, 뼈 건강, 눈 건강(황국화차)</p><br>
+            <p>자스민: 식욕억제, 항암 효과, 혈관 건강, 다이어트, 진정 작용 (미량 카페인 첨가)</p><br>
+            <p>매화: 갈증 해소, 숙취 해소, 피부미용</p><br>
+            <p>메리골드: 눈 건강, 피부 노화 및 항염 작용, 이뇨 작용</p><br>
+            <p>산수유꽃: 항산화 작용, 노화 방지, 요실금 완화, 눈 건강</p><br>
+            <p>목련꽃: 혈압 저하, 축농증, 비염 및 두통 개선</p><br>
+            <p>벚꽃: 숙취, 갈증, 피로 완화, 식욕 증진</p><br>
+            <p>도라지: 기관지, 기침, 가래, 혈당 강화 작용, 콜레스테롤 수치 완화</p><br>
+            <p>민들레: 눈 건강, 호흡기, 이뇨작용, 항산화 작용</p><br>  
+        </div>
+        <br><br><br>
+        <br><br><br>
+    <div class="w3-container w3-half">
+        <h4>open-closed</h4><br>
+        <h4>월~금: 09:00 ~ 18:00 </h4><br>
+        <h4>토: 09:00 ~ 13:00 </h4><br>
+        <h4>일, 공휴일 휴무</h4><br>
+        <h4> P.H. 070-####-#### </h4>
+
+    </div>
+    <form id="C&S" class="w3-container w3-2021-buttercream w3-text-black w3-half">
+        <h4 class="w3-center"> 문의 사항 </h4>
+        <div class="w3-row-padding">
+            <div class="w3-half">
+              <label>이름</label>
+              <input class="w3-input w3-border" type="text" placeholder="name">
+            </div>
+            <div class="w3-half">
+              <label>휴대전화</label>
+              <input class="w3-input w3-border" type="text" placeholder="P.H.">
+            </div>
+            <div>
+                <label> e-mail </label>
+                <input class="w3-input w3-border" type="text" placeholder="e-mail">
+            </div>
+            <div>
+                <label> 문의사항 </label>
+                <input class="w3-input w3-border" type="text" placeholder="text">
+            </div>
+            <button class="w3-button w3-block w3-section w3-brown w3-ripple w3-padding" onclick="Send();">Send</button>
+        </div>
+    </form>
+    </article>
+    </section>
+    <br><br><br>
+    <hr>
+    <footer class="w3-conatiner w3-center">
+    <div class="w3-row">
+        <div class="w3-col s3">
+            <h6> Contact </h6>
+            <ul style="font-size: 10px;">   
+                <li> 사업자번호: ####-##-##### </li><br>
+                <li> tell.  010-3728-####</li><br>
+                <li> e-mail: qtmkk5@naver.com<a href="mailto:qtmkk5@naver.com" title="E-mail"></a></li>
+            </ul>
+        </div>
+        <div class="w3-col s3 w3-conatiner w3-center">
+            <h6>SNS</h6>
+            <a href="#"><i class="fa fa-instagram" style="font-size: 15px;"></i></a>
+            <a href="#"><i class="fa fa-facebook" style="font-size: 15px;"></i></a>
+        </div>
+        <div class="w3-col s3 w3-conatiner w3-center" style="font-size: 10px;">
+            <h6> location </h6>
+            부산광역시 연제구 **동 17번길 12-1 **빌딩 3층 
+        </div>
+        <div class="w3-col s3 w3-conatiner w3-center" style="font-size: 10px;">
+            <h6>open-closed</h6>
+            월~금: 09:00 ~ 18:00 <br>
+            토: 09:00 ~ 13:00 <br>
+            일, 공휴일 휴무 
+        </div>
+    </div>
+    </footer>
+    </div>
+</body>
+</html>

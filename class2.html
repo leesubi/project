@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>백화난만 예약</title>
+    <script>
+        function Submit1(){
+           alert("예약해 주셔서 감사합니다.")
+       }
+    </script>
+
+</head>
+<body>
+    <h2>百花爛漫</h2>
+    <br>
+    저희는1대1 수업이 아닌 1대 다수로 수업을 진행합니다. <br>
+    시간은  2시간 30분이 소요되며, 쉬는 시간은 클래스에 포함되지 않습니다.<br>
+    수강료는 1인당 45,000원이며, 하루에 약 6명의 회원님들과 함께 합니다. <br>
+    예약은 확정된 후(최대 6시간) 개인적으로 문자를 통해 안내를 도와드리고 있습니다. <br>
+    더불어 예약 취소는 예약 날짜의 3일 이내로만 가능하며 그 이후의 일은 백화난만에서 책임지지 않습니다. <br>
+    <br>
+    위 내용을 꼭 숙지해 주시고 신중한 예약 부탁드립니다.
+    <br><br>
+    <form action="/action_page.php">
+ <fieldset>
+  <legend>전통차 체험:</legend>
+  <label for="fname">이름:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="PH">연락처:</label>
+  <input type="text" id="PH" name="PH"><br><br>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email"><br><br>
+  <label for="date_">예약 날짜:</label>
+  <input type="date" id="date_" name="date_"><br><br>
+  <button onclick="Submit1();" type="submit">Submit</button>
+ </fieldset>
+</form>
+    
+</body>
+</html>
