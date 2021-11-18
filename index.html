@@ -80,11 +80,20 @@
                 x.previousElementSibling.className.replace("w3-2021-buttercream", "");
             }
         }
-
+        function popup(){
+            window.open("./project_event.html", "이번 달 클래스","width=700, height=500, scrollbars=yes");
+        }
+        let name='';
+        function init(){
+            name = document.getElementById("inputt");
+            name.addEventListener("focus",bgcolor);
+        }
+        function bgcolor(){
+            name.style.backgroundColor="khaki";
+        }
     </script>
 </head>
-<body class="w3-container w3-2021-buttercream" onload="tablePrint();">
-    <div class="container">
+<body class="w3-container w3-2021-buttercream" onload="popup();init();">
     <div class="w3-sidebar w3-bar-block	w3-animate-left w3-card" style="display:none;z-index:5" id="mySidebar">
         <button onclick="w3_close()" class="w3-bar-item w3-large w3-2021-buttercream"> more &times; </button> 
         <a href="#home" class="w3-bar-item w3-button"> home </a>
@@ -103,8 +112,7 @@
         <header class="w3-container">
             <h1>百花爛漫</h1>
 
-    </div>
-    </header>
+        </header>
     <nav>
         <div class="w3-container w3-bar w3-left w3-2021-desert-mist w3-opacity-min">
             <a href="#home" class="w3-button w3-hover-sand">home</a>
@@ -133,7 +141,7 @@
             <button class="w3-center w3-third" onclick="cancle();"> cancle </button>
         </div>
         <br><br>
-        <input type="text" class="w3-bar-item w3-input w3-small" placeholder="Search..">
+        <input id="inputt" type="text" class="w3-bar-item w3-input w3-small" placeholder="Search..">
         <a href="#" class="w3-bar-item w3-button w3-right">Go</a>
         <br><br>
         <div id = "contact" class="w3-container w3-left">
