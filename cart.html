@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-win8.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title> 백화난만, 百花爛漫</title>
+    <style>
+        body {max-width: 1200px; margin:0px auto;
+        }
+        header {display: block;
+            height: 100px;
+        }
+        ul {list-style: none;
+        }
+        a {text-decoration: none;
+        }
+        li {list-style: none;
+        }
+        section{display:flex;
+        }
+        article{flex: 3;
+        }
+        aside{flex: 1;
+        }
+        nav{flex: 1;
+        }
+        footer{display: block;
+            height: 100px;
+        }
+    </style>
+    <script>
+        function w3_open(){
+            document.getElementById("mySidebar").style.width="30%";
+            document.getElementById("mySidebar").style.display="block";
+            document.getElementById("myOverlay").style.display = "block";
+        }   
+       function w3_close(){
+           document.getElementById("mySidebar").style.display="none";
+           document.getElementById("myOverlay").style.display = "none";
+        } 
+        function myAccFunc() {
+            var x = document.getElementById("demoAcc");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+                x.previousElementSibling.className += " w3-2021-buttercream";
+            } else { 
+                x.className = x.className.replace("w3-show", "");
+                x.previousElementSibling.className = 
+                x.previousElementSibling.className.replace("w3-2021-buttercream", "");
+            }
+        }
+        function cartAppend(e){
+            const x = document.getElementById(e);
+            const ele = document.getElementById("cart");
+            ele.appendChild(x);
+        }
+        function cartRemove(e){
+            const x = document.getElementById(e);
+            const cart = document.getElementById("cart");
+            const list = document.getElementById("list");
+            cart.removeChild(x);
+            list.appendChild(x);
+            
+        }
+    </script>
+</head>
+<body class="w3-container w3-2021-buttercream" onload="tablePrint();">
+    <div class="w3-sidebar w3-bar-block	w3-animate-left w3-card" style="display:none;z-index:5" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large w3-2021-buttercream"> more &times; </button> 
+        <a href="./index.html" class="w3-bar-item w3-button"> home </a>
+        <div class="w3-button w3-bar-item" onclick="myAccFunc()">
+            items <i class="fa fa-caret-down"></i></div>
+        <div id="demoAcc" class="w3-hide w3-white w3-card-4">
+            <a href="./product.html" class="w3-bar-item w3-button">season items</a>
+            <a href="./product.html" class="w3-bar-item w3-button">items</a>
+        </div>
+
+        <a href="./index.html" class="w3-bar-item w3-button"> reference content </a>    
+        <a href="./notice.html" class="w3-bar-item w3-button">notice</a>
+        <a href="./index.html" class="w3-bar-item w3-button">C&S</a>
+        </div>
+    </div>
+    <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+        <button class="w3-button w3-xxlarge w3-hover-none" onclick="w3_open()">&#9776;</button>
+        <header class="w3-container">
+            <h1>百花爛漫</h1>
+    </div>
+    </header>
+    <nav>
+        <div class="w3-container w3-bar w3-left w3-2021-desert-mist w3-opacity-min">
+            <a href="./index.html" class="w3-button w3-hover-sand">home</a>
+            <a href="./product.html" class="w3-button w3-hover-sand">season items</a>
+            <a href="./product.html" class="w3-button w3-hover-sand">items</a>
+            <a href="./index.html" class="w3-button w3-hover-sand">reference content</a>
+            <a href="./notice.html" class="w3-button w3-hover-sand">notice</a>
+            <a href="./index.html" class="w3-button w3-hover-sand">C&S</a>
+            <a href="#" class="w3-button w3-hover-sand w3-right">mypage</a>
+            <a href="./cart.html" class="w3-button w3-hover-sand w3-right">cart</a>
+        </div>
+    </nav>
+    <br><br>
+    <br>
+    <aside class="w3-container w3-2021-desert-mist w3-right w3-opacity-min">
+        <div id="login" class="w3-container w3-center">
+            <h4> LOGIN </h4>
+            ID : 
+            <input type="text" name="" id="id"><br>
+            PW:
+            <input type="password" name="" id="pw">
+            <br><br>
+            <button class="w3-center w3-third" onclick="document.location='./signup.html'"> sign up </button>
+            <button class="w3-center w3-third" onclick="login();"> join </button>
+            <button class="w3-center w3-third" onclick="cancle();"> cancle </button>
+        </div>
+        <br><br>
+        <input type="text" class="w3-bar-item w3-input w3-small" placeholder="Search..">
+        <a href="#" class="w3-bar-item w3-button w3-right">Go</a>
+        <br><br>
+        <div id = "contact" class="w3-container w3-left">
+            <h4> reservation </h4>
+                <p> 꽃꽂이 클래스
+                <button class="w3-small" onclick="document.location='./class.html'">예약</button></p>
+                <p> 전통차 체험
+                <button class="w3-small" onclick="document.location='./class2.html'">예약</button></p>
+                <p> 꽃차 및 쿠킹 체험
+                <button class="w3-small" onclick="cooking();">예약</button></p> 
+        </div>
+        <br>
+    </aside>
+    <section class="w3-center">
+        <article class = "w3-container w3-center">
+            <h2> 장바구니 </h2>
+            <div id="cart" class="w3-container w3-center" style="width: 800px; height: 250px; border: 1px solid gray;">
+        
+            </div>
+         <h2> 장바구니 </h2>
+         <div id="list" class="w3-container w3-center" border: 1px solid gray;" onclick="this.style.display='none'">
+             <div id="img1" class="w3-container" >
+                 <img src="./images/세인트폴리아.jpg" width="150" height="100">
+                 <div>
+                   <p>가격:1500원</p>
+                   <button onclick="cartAppend('img1');">추가</button>
+                   <button onclick="cartRemove('img1');">삭제</button>
+                </div>
+            </div>
+            <div id="img2" class="w3-container">
+                 <img src="./images/덴드로비움.jpg" width="150" height="100">
+                 <div>
+                   <p>가격:3000원</p>
+                   <button onclick="cartAppend('img2');">추가</button>
+                   <button onclick="cartRemove('img2');">삭제</button>
+                 </div>
+            </div>
+             <div id="img3" class="w3-container">
+                 <img src="./images/군자란.jpg" width="150" height="100">
+                 <div>
+                 <p>가격:1800원</p>
+                   <button onclick="cartAppend('img3');">추가</button>
+                   <button onclick="cartRemove('img3');">삭제</button>
+                 </div>
+             </div>
+             <div id="img3" class="w3-container">
+                <img src="./images/난초.jpg" width="150" height="100">
+                <div>
+                <p>가격:2500원</p>
+                  <button onclick="cartAppend('img3');">추가</button>
+                  <button onclick="cartRemove('img3');">삭제</button>
+                </div>
+            <div id="img3" class="w3-container">
+                <img src="./images/라벤더.jpg" width="150" height="100">
+                <div>
+                <p>가격:1300원</p>
+                    <button onclick="cartAppend('img3');">추가</button>
+                    <button onclick="cartRemove('img3');">삭제</button>
+                </div>
+            </div>
+            <div id="img3" class="w3-container">
+                <img src="./images/메리골드.jpg" width="150" height="100">
+                <div>
+                <p>가격:2000원</p>
+                  <button onclick="cartAppend('img3');">추가</button>
+                  <button onclick="cartRemove('img3');">삭제</button>
+                </div>
+            </div>
+            <div id="img3" class="w3-container">
+                <img src="./images/베고니아.jpg" width="150" height="100">
+                <div>
+                <p>가격:10000원</p>
+                  <button onclick="cartAppend('img3');">추가</button>
+                  <button onclick="cartRemove('img3');">삭제</button>
+                </div>
+            </div>
+            <div id="img3" class="w3-container">
+                <img src="./images/수국.jpg" width="150" height="100">
+                <div>
+                <p>가격:8000원</p>
+                  <button onclick="cartAppend('img3');">추가</button>
+                  <button onclick="cartRemove('img3');">삭제</button>
+                </div>
+            </div>
+            <div id="img3" class="w3-container">
+                <img src="./images/수선화.jpg" width="150" height="100">
+                <div>
+                <p>가격:3000원</p>
+                  <button onclick="cartAppend('img3');">추가</button>
+                  <button onclick="cartRemove('img3');">삭제</button>
+                </div>
+            </div>
+            <div id="img3" class="w3-container">
+                <img src="./images/시네라리아.jpg" width="150" height="100">
+                <div>
+                <p>가격:7000원</p>
+                  <button onclick="cartAppend('img3');">추가</button>
+                  <button onclick="cartRemove('img3');">삭제</button>
+                </div>
+            </div>
+            <div id="img3" class="w3-container">
+                <img src="./images/아카시아.jpg" width="150" height="100">
+                <div>
+                <p>가격:4000원</p>
+                  <button onclick="cartAppend('img3');">추가</button>
+                  <button onclick="cartRemove('img3');">삭제</button>
+                </div>
+            </div>
+            <div id="img3" class="w3-container">
+                <img src="./images/은방울꽃.jpg" width="150" height="100">
+                <div>
+                <p>가격:3000원</p>
+                  <button onclick="cartAppend('img3');">추가</button>
+                  <button onclick="cartRemove('img3');">삭제</button>
+                </div>
+            </div>
+            <div id="img3" class="w3-container">
+                <img src="./images/카네이션.jpg" width="150" height="100">
+                <div>
+                <p>가격:1500원</p>
+                  <button onclick="cartAppend('img3');">추가</button>
+                  <button onclick="cartRemove('img3');">삭제</button>
+                </div>
+            </div>
+            <div id="img3" class="w3-container">
+                <img src="./images/카모마일.jpg" width="150" height="100">
+                <div>
+                <p>가격:3500원</p>
+                  <button onclick="cartAppend('img3');">추가</button>
+                  <button onclick="cartRemove('img3');">삭제</button>
+                </div>
+            </div>
+            <div id="img3" class="w3-container">
+                <img src="./images/튤립.jpg" width="150" height="100">
+                <div>
+                <p>가격:1500원</p>
+                  <button onclick="cartAppend('img3');">추가</button>
+                  <button onclick="cartRemove('img3');">삭제</button>
+                </div>
+            </div>
+            <div id="img3" class="w3-container">
+                <img src="./images/한련화.jpg" width="150" height="100">
+                <div>
+                <p>가격:4000원</p>
+                  <button onclick="cartAppend('img3');">추가</button>
+                  <button onclick="cartRemove('img3');">삭제</button>
+                </div>
+            </div>
+            <div id="img3" class="w3-container">
+                <img src="./images/히아신스.jpg" width="150" height="100">
+                <div>
+                <p>가격:5000원</p>
+                  <button onclick="cartAppend('img3');">추가</button>
+                  <button onclick="cartRemove('img3');">삭제</button>
+                </div>
+            </div>
+            <div id="img3" class="w3-container">
+                <img src="./images/해바라기.jpg" width="150" height="100">
+                <div>
+                <p>가격:1500원</p>
+                  <button onclick="cartAppend('img3');">추가</button>
+                  <button onclick="cartRemove('img3');">삭제</button>
+                </div>
+            </div>
+            <div id="img3" class="w3-container">
+                <img src="./images/히비스커스.jpg" width="150" height="100">
+                <div>
+                <p>가격:5000원</p>
+                  <button onclick="cartAppend('img3');">추가</button>
+                  <button onclick="cartRemove('img3');">삭제</button>
+                </div>
+            </div>
+        </article>
+    </section>
+    <br><br><br>
+    <footer class="w3-conatiner w3-center">
+        <div class="w3-row">
+            <div class="w3-col s3">
+                <h6> Contact </h6>
+                <ul style="font-size: 10px;">   
+                    <li> 사업자번호: ####-##-##### </li><br>
+                    <li> tell.  010-3728-####</li><br>
+                    <li> e-mail: qtmkk5@naver.com<a href="mailto:qtmkk5@naver.com" title="E-mail"></a></li>
+                </ul>
+            </div>
+            <div class="w3-col s3 w3-conatiner w3-center">
+                <h6>SNS</h6>
+                <a href="#"><i class="fa fa-instagram" style="font-size: 15px;"></i></a>
+                <a href="#"><i class="fa fa-facebook" style="font-size: 15px;"></i></a>
+            </div>
+            <div class="w3-col s3 w3-conatiner w3-center" style="font-size: 10px;">
+                <h6> location </h6>
+                부산광역시 연제구 **동 17번길 12-1 **빌딩 3층 
+            </div>
+            <div class="w3-col s3 w3-conatiner w3-center" style="font-size: 10px;">
+                <h6>open-closed</h6>
+                월~금: 09:00 ~ 18:00 <br>
+                토: 09:00 ~ 13:00 <br>
+                일, 공휴일 휴무 
+            </div>
+        </div>
+    </footer>
+</body>
+</html>      

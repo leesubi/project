@@ -36,8 +36,16 @@
         footer{display: block;
             height: 100px;
         }
+        label {
+            display: inline-block;
+            width: 120px;
+        }
+        input {
+            display: inline-block;
+            width: 160px;
+        }
     </style>
-    <script>
+    <script src="sign.js">
         function login(){
            let id = document.getElementById("id").value;
            let pw = document.getElementById("pw").value;
@@ -51,6 +59,9 @@
                alert("회원가입을 하세요");
            }
        } 
+       function sign_up(){
+           alert("회원가입 페이지로 넘어갑니다.")
+       }
        function Send(){
            alert("성공적으로 접수 되었습니다. 감사합니다.")
        }
@@ -144,66 +155,45 @@
         <br>
     </aside>
     <section>
-    <article class="w3-left" style="text-align: left;">
-        <h2><b>notice</b></h2>
-        <br><br>
-        <p>
-            1. 배송안내<br> 
-            
-            - 배송 업체: CJ 대한통운 (1588-1255)<br> 
-            - 배송 지역: 대한민국 전지역<br> 
-            - 배송 비용: 조건부배송(4만원 이상 무료배송) / 도서산간 지역 별도 추가 금액 발생<br> 
-            - 배송 기간: 주말·공휴일 제외 2일~5일 (최대 14일) 
-        </p>
-        <br>
-        <p>
-            2-1. 유의 사항<br> 
-    
-            - 주문폭주 및 공급 사정으로 인하여 지연 및 품절이 발생될 수 있습니다. <br>  
-            - 기본 배송기간 이상 소요되는 상품이거나, 품절 상품은 개별 연락을 드립니다. 
-        </p>
-        <br>
-        <p>
-            2-2. 교환및 반품이 가능한 경우<br> 
-
-            - 상품에 하자가 있거나 오배송일 경우 동일한 제품으로 교환이 가능합니다. (반품하실 경우 단순 변심으로 간주되어 배송비 부과됩니다.)<br> 
-            - 구매 금액에 따른 사은품을 받으신 경우 상품 반품 처리 시 사은품 포함하여 반품하셔야 합니다. <br> 
-            - 개인의 불찰로 인한 하자 발생 시 교환/반품 처리되지 않습니다.
-        </p>  
-        <br>
-        <p> 
-            2-3. 동봉되어 있는 교환/ 반품 <br> 
-            - 수령한 날로부터 48시간 이내 반품 신청 해 주신 후<br> 
-                반품 주소 ㅣ부산광역시 연제구 **동 17번길 12-1 **빌딩 3층 <br> 
-                반드시 수령일로부터 7일 내로 회수되어야 교환 처리가 가능합니다.<br> 
-                
-            
-             
-            - 반품 배송비 미 입금시 환불금액에서 차감되어 환불됩니다. (2,500원/제주산간 5,500원)<br> 
-            - 왕복 배송비 5000원(제주산간11,000원)은 고객님이 부담하셔야하며, 계좌 입금만 가능합니다.<br> 
-            - 교환 시 왕복 배송비는 농협은행 3##-1###-8###-#3 백화난만으로 입금해 주셔야 합니다. (동봉 시 분실위험)<br>  
-        </p>
-        <br>
-        <p>
-            2-4. 교환 및 반품이 불가능한 경우<br> 
-
-            - 고객님의 부주의로 인하여 상품 손상의 경우<br> 
-            - 상품의 가치가 훼손된 경우 (꽃잎의 개수, 꽃의 변색 등)<br> 
-            - 세일상품 및 품절된 상품의 경우<br> 
-            - 포장되는 과정에서 발생하는 미세 하자<br> 
-        </p>
-        <br>
-        <p>
-            3. 환불 처리 안내<br> 
-
-            - 상품 도착 후 환불처리는 1일~3일 안에 처리됩니다.<br> 
-            - 무통장 실시간 이체의 경우 고객님의 은행 계좌를 알려주시면 이체 됩니다.<br> 
-            - 신용카드로 결제하신 경우는 신용카드 승인 취소를 요청한 날로 부터 7~15일 안에 취소됩니다.<br> 
-            - 실시간 계좌이체는 2~5일 이후 해당 은행에서 환불처리 됩니다.<br> 
-        </p>
-    </article>
-    </section>
-    <br><br><br>
+    <article class="w3-container" style="text-align: left;">
+        <div id="page-wrap">
+            <form method="post" action="#" name="form" onsubmit="return checkAll();">
+                <fieldset class="w3-center">
+                    <legend> 회원 가입 </legend>
+                    <label for="userId">아이디</label>
+                    <input type="text" name="userId" id="text1" />
+                    <button>중복검사</button><br />
+                    <br>
+                    <label for="password1">패스워드</label>
+                    <input type="password" name="password1" /><br />
+                    <br>
+                    <label for="password2">패스워드 확인</label>
+                    <input type="password" name="password2" /><br />
+                    <br>
+                    <label for="name">이름</label>
+                    <input type="text" name="name" /><br />
+                    <br>
+                    <label for="tel">휴대폰 번호</label>
+                    <input type="tel" name="tel" /><br/>
+                    <br>
+                    <label for="email">이메일</label>
+                    <input type="email" name="email" />
+                    <br />
+                    <br>
+                    <label for="dob">생일</label>
+                    <input type="date" name="dob" />
+                    <br />
+                    <br>
+                </fieldset>
+                <div class="w3-center">
+                <input type="submit" name="submit" value="제출" />
+                <input type="reset" name="reset" value="초기화" />
+                </div>
+            </form>
+        </div>
+        </article>
+        </section>
+        <br><br><br>
     <hr>
     <footer class="w3-conatiner w3-center">
     <div class="w3-row">
